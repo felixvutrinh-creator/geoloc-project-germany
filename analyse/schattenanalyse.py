@@ -16,5 +16,11 @@ def shadow_suggestion_mask(image_path: str, output_path: str):
             cv.drawContours(image, [contour], -1, (0, 0, 255), 2)
     cv.imwrite(output_path, image)
     return mask
+if __name__ == "__main__":
+    parser = ap.ArgumentParser()
+    parser.add_argument("--input_path", type=str, required=True)
+    parser.add_argument("--output_path", type=str, required=True)
+    args = parser.parse_args()
+    shadow_suggestion_mask(args.input_path, args.output_path)
+    print(f"Shadow suggestion mask saved to {args.output_path}")
 
-    
