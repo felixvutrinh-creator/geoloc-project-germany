@@ -5,3 +5,6 @@ data/media/
 data/*.json
 venv/
 __pycache__/
+*.pth
+checkpoints/
+.DS_Store
